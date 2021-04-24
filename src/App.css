@@ -206,6 +206,7 @@ h3 {
 }
 .App .invoiceList {
   font-weight: 300;
+  width: 100%;
   font-size: 11px;
   margin-bottom: 16px;
   padding-top: 32px;

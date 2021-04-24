@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import logo from './../public/logo.svg';
+import logo from './assets/logo.svg';
 import './App.css';
 
-function App() {
+interface AppProps {}
+
+function App({}: AppProps) {
   // Create the count state.
   const [count, setCount] = useState(0);
-  // Update the count (+1 every second).
+  // Create the counter (+1 every second).
   useEffect(() => {
     const timer = setTimeout(() => setCount(count + 1), 1000);
     return () => clearTimeout(timer);
@@ -15,6 +17,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
+
         <p>
           Page has been open for <code>{count}</code> seconds.
         </p>

@@ -1,12 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
+import {
+  BrowserRouter,
+  Switch,
+  Route,
+  Link,
+  useRouteMatch,
+  useParams,
+} from "react-router-dom";
 
-import './App.css';
-import { InvoiceDetail } from './InvoiceDetail';
-
-import InvoiceForm from './InvoiceForm';
-import InvoiceList from './InvoiceList';
-import Modal from './Modal';
-import Nav from './Nav';
+import "./App.css";
+import InvoiceList from "./pages/InvoiceList";
+import InvoiceDetail from "./pages/InvoiceDetail";
+import Modal from "./components/Modal";
+import Nav from "./components/Nav";
+import Counter from "./components/Counter";
 interface AppProps {}
 
 function App({}: AppProps) {
@@ -16,16 +23,23 @@ function App({}: AppProps) {
 
   // Return the App component.
   return (
-    <div className="App">
-      {/*<InvoiceForm />*/}
-      <Nav />
-      <div className="MainPageHeader">
-        <InvoiceList />
+    <BrowserRouter>
+      <div className="App">
+        <Nav />
+        <div className="MainPageHeader">
+          <Switch>
+            <Route path="/details/:invoiceId">
+              <InvoiceDetail />
+            </Route>
+            <Route path="/">
+              <InvoiceList />
+            </Route>
+          </Switch>
 
-        {/*<InvoiceDetail />*/}
-        <Modal />
+          <Modal />
+        </div>
       </div>
-    </div>
+    </BrowserRouter>
   );
 }
 

@@ -1,7 +1,6 @@
 import * as React from 'react';
-import { Component } from 'react';
 
-export default function InvoiceForm() {
+const InvoiceForm = (): JSX.Element => {
   return (
     <div
       className="editForm"
@@ -24,8 +23,10 @@ export default function InvoiceForm() {
           <h3>Bill From</h3>
 
           <div>
-            <label htmlFor="">Street Address</label>
-            <input type="text" name="|" id="|" />
+            <label>
+              Street Address
+              <input type="text" name="|" id="|" />
+            </label>
           </div>
         </div>
         <div
@@ -41,49 +42,66 @@ export default function InvoiceForm() {
           }}
         >
           <div>
-            <label htmlFor="">City</label>
-            <input type="text" name="|" id="|" />
+            <label htmlFor="">
+              City
+              <input type="text" name="|" id="|" />
+            </label>
           </div>
           <div>
-            <label htmlFor="">Post Code</label>
-            <input type="text" name="|" id="|" />
+            <label htmlFor="">
+              Post Code
+              <input type="text" name="|" id="|" />
+            </label>
           </div>
           <div>
-            <label htmlFor="">Country</label>
-            <input type="text" name="" id="" />
+            <label htmlFor="">
+              Country
+              <input type="text" name="" id="" />
+            </label>
           </div>
         </div>
 
         <h3>Bill To</h3>
-        <label htmlFor="">Client's Name</label>
-        <input type="text" name="" id="" />
-        <label htmlFor="">Client's Email e.g. email@example.com</label>
-        <input type="text" name="" id="" />
-        <label htmlFor="">Street Address</label>
-        <input type="text" name="" id="" />
+        <label htmlFor="">
+          Clients Name
+          <input type="text" name="" id="" />
+        </label>
+        <label htmlFor="">
+          Clients Email e.g. email@example.com
+          <input type="text" name="" id="" />
+        </label>
+        <label htmlFor="">
+          Street Address
+          <input type="text" name="" id="" />
+        </label>
         <div
           style={{
             display: 'flex',
             justifyContent: 'space-between',
             flexDirection: 'row',
             padding: '0px 0 0 0',
-            //  backgroundColor: '#F9FAFE',
             margin: '0 auto',
             marginTop: '0px',
             overflow: 'hidden',
           }}
         >
           <div>
-            <label htmlFor="">City</label>
-            <input type="text" name="|" id="|" />
+            <label htmlFor="">
+              City
+              <input type="text" name="|" id="|" />
+            </label>
           </div>
           <div>
-            <label htmlFor="">Post Code</label>
-            <input type="text" name="|" id="|" />
+            <label htmlFor="">
+              Post Code
+              <input type="text" name="|" id="|" />
+            </label>
           </div>
           <div>
-            <label htmlFor="">Country</label>
-            <input type="text" name="" id="" />
+            <label htmlFor="">
+              Country
+              <input type="text" name="" id="" />
+            </label>
           </div>
         </div>
 
@@ -93,38 +111,41 @@ export default function InvoiceForm() {
             justifyContent: 'space-between',
             flexDirection: 'row',
             padding: '0px 0 0 0',
-            //  backgroundColor: '#F9FAFE',
             margin: '0 auto',
             marginTop: '0px',
             overflow: 'hidden',
           }}
         >
           <div>
-            <label htmlFor="">Invoice date</label>
-            <select name="" id="">
-              <option value="">Net 1 day</option>
-              <option value="">Net 7 days</option>
-              <option value="">Net 14 days</option>
-              <option value="">Net 30 days</option>
-            </select>
+            <label htmlFor="">
+              Invoice date
+              <select name="" id="">
+                <option value="">Net 1 day</option>
+                <option value="">Net 7 days</option>
+                <option value="">Net 14 days</option>
+                <option value="">Net 30 days</option>
+              </select>
+            </label>
           </div>
           <div>
-            <label htmlFor="">Payment Terms</label>
-            <select name="" id="">
-              <option value="">Net 1 day</option>
-              <option value="">Net 7 days</option>
-              <option value="">Net 14 days</option>
-              <option value="">Net 30 days</option>
-            </select>
+            <label htmlFor="">
+              Payment Terms
+              <select name="" id="">
+                <option value="">Net 1 day</option>
+                <option value="">Net 7 days</option>
+                <option value="">Net 14 days</option>
+                <option value="">Net 30 days</option>
+              </select>
+            </label>
           </div>
         </div>
 
-        <label htmlFor="">Project Description</label>
-        {/*e.g. Graphic Design Service*/}
-        <select>
-          <option value="">Item List</option>
-        </select>
-
+        <label htmlFor="">
+          Project Description
+          <select>
+            <option value="">Item List</option>
+          </select>
+        </label>
         <h3>Item List</h3>
         <div
           style={{
@@ -132,23 +153,28 @@ export default function InvoiceForm() {
             justifyContent: 'space-between',
             flexDirection: 'row',
             padding: '0px 0 0 0',
-            //  backgroundColor: '#F9FAFE',
             margin: '0 auto',
             marginTop: '0px',
             overflow: 'hidden',
           }}
         >
           <div>
-            <label htmlFor="">Item Name</label>
-            <input type="text" />
+            <label htmlFor="">
+              Item Name
+              <input type="text" />
+            </label>
           </div>
           <div>
-            <label htmlFor="">Qty. </label>
-            <input type="text" />
+            <label htmlFor="">
+              Qty.
+              <input type="text" />
+            </label>
           </div>
           <div>
-            <label htmlFor="">Price Total</label>
-            <input type="text" />
+            <label htmlFor="">
+              Price Total
+              <input type="text" />
+            </label>
           </div>
         </div>
 
@@ -194,4 +220,6 @@ export default function InvoiceForm() {
       </form>
     </div>
   );
-}
+};
+
+export default InvoiceForm;

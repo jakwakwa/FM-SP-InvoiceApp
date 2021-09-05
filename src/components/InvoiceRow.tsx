@@ -1,16 +1,8 @@
-import * as React from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  useRouteMatch,
-  useParams,
-} from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { setStatus } from "../store/actions/Invoices";
-import { Link } from "react-router-dom";
-import { InvoiceDetail } from "../pages/InvoiceDetail";
+import * as React from 'react';
+import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { setStatus } from '../store/actions/Invoices';
+
 type InvoiceProps = {
   invoiceNr: string;
   invoiceDate: string;
@@ -28,8 +20,8 @@ const InvoiceRow: React.FC<InvoiceProps> = ({
 }) => {
   const dispatch = useDispatch();
 
-  const handleStatus = () => {
-    dispatch(setStatus(invoiceNr, "done"));
+  const handleStatus = (invNr: string) => {
+    dispatch(setStatus(invNr, 'done'));
   };
 
   return (
@@ -37,26 +29,26 @@ const InvoiceRow: React.FC<InvoiceProps> = ({
       <div
         className="invoiceList"
         style={{
-          display: "flex",
-          justifyContent: "space-between",
-          padding: "20px 32px 20px 32px",
+          display: 'flex',
+          justifyContent: 'space-between',
+          padding: '20px 32px 20px 32px',
           //alignContent: 'right',
-          textAlign: "right",
+          textAlign: 'right',
         }}
       >
-        <div style={{ textAlign: "left", width: "10%" }}>
-          {invoiceNr}
-        </div>
-        <div style={{ textAlign: "left", width: "20%" }}>{invoiceDate}</div>
-        <div style={{ textAlign: "left", width: "30%" }}>{name}</div>
-        <div style={{ textAlign: "right", width: "20%" }}>£ {amount}</div>
-        <div
+        <div style={{ textAlign: 'left', width: '10%' }}>{invoiceNr}</div>
+        <div style={{ textAlign: 'left', width: '20%' }}>{invoiceDate}</div>
+        <div style={{ textAlign: 'left', width: '30%' }}>{name}</div>
+        <div style={{ textAlign: 'right', width: '20%' }}>£ {amount}</div>
+        <button
           onClick={() => handleStatus(invoiceNr)}
-          style={{ textAlign: "center", width: "15%" }}
+          style={{ textAlign: 'center', width: '15%' }}
         >
           {status}
+        </button>
+        <div style={{ textAlign: 'left', width: '5%' }}>
+          <Link to={`/details/${invoiceNr}`}>Details</Link>
         </div>
-        <div style={{ textAlign: "left", width: "5%" }}><Link to={`/details/${invoiceNr}`}>> </Link> </div>
       </div>
     </>
   );

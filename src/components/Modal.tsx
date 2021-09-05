@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Modal() {
+const Modal = (): JSX.Element => {
   return (
     <div>
       {/*Delete Modal*/}
@@ -43,4 +43,6 @@ export default function Modal() {
       {/*Delete Modal end*/}
     </div>
   );
-}
+};
+
+export default Modal;
